@@ -1,0 +1,19 @@
+
+String textos[] = {
+"hola amigos", 
+"adios amigos", 
+"poca luz", 
+"falcao garcia"
+};
+
+void setup() {
+  size(800, 800);
+}
+
+
+void draw() {
+  int cual = mouseX/200;
+  background(200);
+  fill(0);
+  text(textos[cual], 10, 10);
+}
