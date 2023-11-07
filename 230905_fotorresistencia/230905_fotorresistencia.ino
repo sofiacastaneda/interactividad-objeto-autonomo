@@ -1,12 +1,18 @@
+const int sensorPin = 2; 
 
 void setup() {
-  Serial.begin(9600); // iniciar comunicación serial
+  pinMode(sensorPin, INPUT);
+  Serial.begin(9600);
 }
-
 
 void loop() {
-  int sensorValue = analogRead(A0); // leer el voltaje en A0
-  Serial.print(sensorValue); // enviar el dato por serial
-  Serial.print(",");
-  delay(10); // pausa breve para que el dato se envíe correctamente
-}
+  int sensorValue = digitalRead(sensorPin);
+
+  if (sensorValue == HIGH) {
+    Serial.println("El sensor está en posición horizontal.");
+  } else {
+    Serial.println("El sensor está inclinado.");
+  }
+
+  delay(100); 
+    }
